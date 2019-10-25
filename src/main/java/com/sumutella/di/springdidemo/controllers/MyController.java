@@ -1,5 +1,7 @@
 package com.sumutella.di.springdidemo.controllers;
 
+import com.sumutella.di.springdidemo.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -10,10 +12,11 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
+    @Autowired
+    private GreetingService greetingService;
 
     public String hello(){
-        System.out.println("hello man!");
-        return "foo";
+        return greetingService.sayGreeting();
     }
 
 }
