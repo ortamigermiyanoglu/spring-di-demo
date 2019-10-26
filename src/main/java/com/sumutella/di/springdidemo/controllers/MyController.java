@@ -12,11 +12,15 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
-    @Autowired
+
     private GreetingService greetingService;
 
     public String hello(){
         return greetingService.sayGreeting();
     }
 
+    @Autowired
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 }

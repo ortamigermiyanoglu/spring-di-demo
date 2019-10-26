@@ -15,7 +15,7 @@ import org.springframework.stereotype.Controller;
 public class ConstructorInjectedController {
     private GreetingService greetingService;
 
-    // @Autowired is optional in contructor based dependency injection
+    @Autowired // is optional in contructor based dependency injection
     public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
